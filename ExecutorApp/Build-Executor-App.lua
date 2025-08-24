@@ -1,16 +1,19 @@
-project "WalnutApp"
+project "ExecutorApp"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
    targetdir "bin/%{cfg.buildcfg}"
    staticruntime "off"
 
-   files { "src/**.h", "src/**.cpp" }
+   files { "src/**.h", "src/**.cpp", "src/**.ico", "ExecutorApp.rc","resource.h" }
 
    includedirs
    {
       "../vendor/Walnut/vendor/imgui",
+      "../vendor/Walnut/vendor/libtinyfiledialogs",
       "../vendor/Walnut/vendor/glfw/include",
+      "../vendor/libtinyfiledialogs",
+      "../embed",
 
       "../vendor/Walnut/Walnut/Source",
       "../vendor/Walnut/Walnut/Platform/GUI",

@@ -1,8 +1,8 @@
 -- premake5.lua
-workspace "WalnutApp"
+workspace "ExecutorApp"
    architecture "x64"
    configurations { "Debug", "Release", "Dist" }
-   startproject "WalnutApp"
+   startproject "ExecutorApp"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"
@@ -11,4 +11,4 @@ workspace "WalnutApp"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "vendor/Walnut/Build-Walnut-External.lua"
-include "WalnutApp/Build-Walnut-App.lua"
+include "ExecutorApp/Build-Executor-App.lua"

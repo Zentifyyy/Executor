@@ -10,6 +10,6 @@ bin-int/
 *.sln
 
 # Exclude
-!vendor/bin
-/vendor/bin
-/WalnutApp/logs
+!vendor/Walnut/bin
+vendor/Walnut/vendor/bin
+/ExecutorApp/logs
