@@ -1,7 +1,5 @@
 # Directories
 .vs/
-bin/
-bin-int/
 
 # Files
 *.vcxproj
@@ -10,6 +8,8 @@ bin-int/
 *.sln
 
 # Exclude
-!vendor/Walnut/bin
-vendor/Walnut/vendor/bin
 /ExecutorApp/logs
+/vendor/bin
+/vendor/bin-int
+/bin-int
+/bin
