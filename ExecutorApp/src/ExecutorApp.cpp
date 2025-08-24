@@ -9,7 +9,7 @@
 #include "iostream"
 #include "Walnut/ImGui/ImGuiTheme.h"
 
-#include "ButtonIcons.embed"
+#include "../ExecutorApp/embed/ButtonIcons.embed"
 
 class ExampleLayer : public Walnut::Layer
 {
@@ -288,19 +288,28 @@ private:
 
 };
 
-Walnut::Application* Walnut::CreateApplication(int argc, char** argv){
+Walnut::Application* Walnut::CreateApplication(int argc, char** argv) {
 	Walnut::ApplicationSpecification spec;
 	spec.Name = "Executor";
 	spec.IconPath = "img/AppIcon.png";
 
 	spec.CustomTitlebar = true;
 	spec.CenterWindow = true;
-	
+
 	spec.Width = 1200;
 	spec.Height = 900;
 
+	spec.TitlebarButtonColour = UI::Colors::Theme::text;
+
+	spec.TitlebarButtonHoveredColour = ImGui::ColorConvertFloat4ToU32(UI::Colors::ConvertFromSRGB({48, 0, 113, 0.5f}));
+
+	spec.TitlebarButtonPressedColour = ImGui::ColorConvertFloat4ToU32(UI::Colors::ConvertFromSRGB({ 48, 0, 113, 0.25f }));
+
 	Walnut::Application* app = new Walnut::Application(spec);
 	std::shared_ptr<ExampleLayer> exampleLayer = std::make_shared<ExampleLayer>();
+
+	app->SetApplicationIcon("img/AppIcon.png");
+
 	app->PushLayer(exampleLayer);
 	app->SetMenubarCallback([app, exampleLayer]()
 	{
